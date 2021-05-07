@@ -3,7 +3,7 @@
 const {Customer} = require('../model/user');
 const Promise = require("es6-promise");
 const accountSid = "AC1a49525455b1d17d064aa5f34a7e4764";
-const authToken = "4628234bc03cef7a1258687794220a45";
+const authToken = "7f81d1f37cc2247f73f396f76f8d9f1e";
 const client = require('twilio')(accountSid, authToken);
 
 let call_data;
@@ -29,7 +29,8 @@ client.calls
           call_data = call;
          console.log(" Hello ",call.sid)
       }
-         );
+         ).catch(err => 
+            console.log(err));
 
                 let response_object = {
                     statusCode : 200,
